@@ -12,7 +12,10 @@ import {
   Image,
   Quote,
   Slide,
-  Text
+  Text,
+  Table,
+  TableRow,
+  TableItem
 } from "spectacle";
 
 // Import image preloader util
@@ -28,7 +31,13 @@ require("../assets/style.css");
 
 
 const images = {
-  logo: require("../assets/handilogo.svg")
+  logo: require("../assets/handilogo.svg"),
+  bg1: require("../assets/bg1.jpg"),
+  handiPost: require("../assets/handipost.png"),
+  handiFind: require("../assets/handifind.png"),
+  reactLogo: require("../assets/reactlogo1.png"),
+  mongoDbLogo: require("../assets/mongodblogo1.png"),
+  tools1: require("../assets/tools1.jpg")
 };
 
 preloader(images);
@@ -68,21 +77,54 @@ export default class Presentation extends React.Component {
             <ListItem textColor="cyan">Hire someone for the job</ListItem>
           </List>
         </Slide>
-        <Slide bgImage="https://images.pexels.com/photos/3327/construction-work-carpenter-tools.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
+        <Slide bgImage="" bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
           <Heading size={2} textColor="white">For Customers</Heading>
-          <List>
-            <ListItem>Post your job, the description, the time-frame and your budget.</ListItem>
-            <ListItem>Contractors, laborers and handyman interested in your project quote you on your job.</ListItem>
-            <ListItem>Select from multiple offers to find the specific quote and worker that is the best fit for your project.</ListItem>
-          </List>
+          <Table>
+            <TableRow>
+              <TableItem>
+                <List>
+                  <ListItem>Post your job, the description, the time-frame and your budget.</ListItem>
+                  <ListItem>Contractors, laborers and handyman interested in your project quote you on your job.</ListItem>
+                  <ListItem>Select from multiple offers to find the specific quote and worker that is the best fit for your project.</ListItem>
+                </List>
+              </TableItem>
+              <TableItem>
+                <Image src={images.handiPost} width="300px" />
+              </TableItem>
+            </TableRow>
+          </Table>
         </Slide>
-        <Slide bgImage="https://static.pexels.com/photos/94762/pexels-photo-94762.jpeg" bgDarken="0.7" transition={["zoom"]} bgColor="cyan" textColor="white">
+        <Slide bgImage={images.bg1} bgDarken="0.7" transition={["zoom"]} bgColor="cyan" textColor="white">
           <Heading size={2} textColor="white">For Contractors</Heading>
-          <List>
-            <ListItem>Find customers who need work in your area of specialty.</ListItem>
-            <ListItem>Review their project and budget.</ListItem>
-            <ListItem>Quote your price or rate for doing their job, along with the time frame it may take to do the job and add a description.</ListItem>
-          </List>
+          <Table>
+            <TableRow>
+              <TableItem>
+                <List>
+                  <ListItem>Find customers who need work in your area of specialty.</ListItem>
+                  <ListItem>Review their project and budget.</ListItem>
+                  <ListItem>Quote your price or rate for doing their job, along with the time frame it may take to do the job and add a description.</ListItem>
+                </List>
+              </TableItem>
+              <TableItem>
+                <Image src={images.handiFind} width="300px" />
+              </TableItem>
+            </TableRow>
+          </Table>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <Table>
+            <TableRow>
+              <TableItem>
+                <Heading size={5}>Made With</Heading>                
+                <Image src={images.reactLogo} width="180px"/>
+                <Image src={images.mongoDbLogo} width="250px" />                
+              </TableItem>
+              <TableItem>
+                <Heading size={5}>The Team</Heading>                                
+                <Text>The Team</Text>
+              </TableItem>
+            </TableRow>
+          </Table>
         </Slide>
         <Slide bgImage="https://images.pexels.com/photos/40011/iphone-smartphone-apps-apple-inc-40011.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" bgDarken="0.7" transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
