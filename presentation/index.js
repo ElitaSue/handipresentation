@@ -37,7 +37,9 @@ const images = {
   handiFind: require("../assets/handifind.png"),
   reactLogo: require("../assets/reactlogo1.png"),
   mongoDbLogo: require("../assets/mongodblogo1.png"),
-  tools1: require("../assets/tools1.jpg")
+  tools1: require("../assets/tools1.png"),
+  jump: require("../assets/jump.jpg"),
+  iphone: require("../assets/iphone.jpg"),
 };
 
 preloader(images);
@@ -58,7 +60,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgImage="https://images.pexels.com/photos/33343/building-joy-planning-plans.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" bgDarken="0.6" transition={["zoom"]} bgColor="primary">
+        <Slide bgImage={images.jump} bgDarken="0.6" transition={["zoom"]} bgColor="primary">
           <Image src={images.logo} width="500px" />
           <Text margin="10px 0 0" textColor="cyan" size={1} fit bold>
             Choose from hundreds of contractors, handymen and laborers
@@ -77,7 +79,7 @@ export default class Presentation extends React.Component {
             <ListItem textColor="cyan">Hire someone for the job</ListItem>
           </List>
         </Slide>
-        <Slide bgImage="" bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
+        <Slide bgImage={images.tools1} bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
           <Heading size={2} textColor="white">For Customers</Heading>
           <Table>
             <TableRow>
@@ -126,7 +128,7 @@ export default class Presentation extends React.Component {
             </TableRow>
           </Table>
         </Slide>
-        <Slide bgImage="https://images.pexels.com/photos/40011/iphone-smartphone-apps-apple-inc-40011.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" bgDarken="0.7" transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide bgImage={images.iphone} bgDarken="0.7" transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Successful people are not gifted; they just work hard, then succeed on purpose.</Quote>
             <Cite textColor="cyan">Unknown</Cite>
