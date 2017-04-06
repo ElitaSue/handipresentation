@@ -42,6 +42,17 @@ const images = {
   jump: require("../assets/jump.jpg"),
   iphone: require("../assets/iphone.jpg"),
   team: require("../assets/team.jpg"),
+  tree1: require("../assets/tree1.jpg"),
+  frowny: require("../assets/frowny.png"),
+  google: require("../assets/google.png"),
+  ksl: require("../assets/ksl.png"),
+  craigslist: require("../assets/craigslist.png"),
+  buried: require("../assets/buried.png"),
+  laptopgirl: require("../assets/laptopgirl.jpg"),
+  bgPost: require("../assets/bgPost.png"),
+  bgQuote: require("../assets/bgQuote.png"),
+  logostrip: require("../assets/logostrip.png"),
+  ThankYou: require("../assets/ThankYou.png"),
 };
 
 preloader(images);
@@ -69,7 +80,35 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={["fade","zoom"]} bgColor="cyan">          
-          <Heading size={1} textColor="secondary">Tree Pic and Sue's description</Heading>
+          <Heading size={3} textColor="primary">The Tree</Heading>   
+            <Table>
+              <TableRow>
+                <TableItem>
+                  <Image src={images.tree1} width="800px"/>
+                </TableItem>
+                <TableItem>
+                  <Appear><Image src={images.frowny} width="200px" margin="-150"/></Appear>
+                </TableItem>
+              </TableRow>
+            </Table>                                 
+        </Slide>
+        <Slide transition={["fade","zoom"]} bgColor="cyan">
+            <Table>
+              <TableRow>
+                <TableItem>
+                  <Image src={images.google} width="400px"/>
+                </TableItem>
+                <TableItem>
+                  <Appear><Image src={images.craigslist} width="400px" margin="-300"/></Appear>
+                </TableItem>
+                <TableItem>
+                  <Appear><Image src={images.ksl} width="500px" margin="-150"/></Appear>
+                </TableItem>
+                <TableItem>
+                  <Appear><Image src={images.buried} width="400px" margin="-150"/></Appear>
+                </TableItem>
+              </TableRow>
+            </Table>   
         </Slide>
         <Slide transition={["fade","zoom"]} bgColor="cyan">          
           <Heading size={1} textColor="secondary">What is handi?</Heading>
@@ -84,11 +123,11 @@ export default class Presentation extends React.Component {
             <Appear><ListItem textColor="cyan">Hire someone for the job</ListItem></Appear>
           </List>
         </Slide>
-        <Slide bgImage={images.tools1} bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
-          <Heading size={2} textColor="white">For Customers</Heading>
+        <Slide bgImage={images.bgPost} transition={["spin"]} bgColor="cyan" textColor="white">
           <Table>
             <TableRow>
               <TableItem>
+                <Heading size={4} textColor="white" textAlign="left">For Customers</Heading>
                 <List>
                   <Appear><ListItem>Post</ListItem></Appear>
                   <Appear><ListItem>Review</ListItem></Appear>
@@ -96,16 +135,16 @@ export default class Presentation extends React.Component {
                 </List>
               </TableItem>
               <TableItem>
-                <Image src={images.handiPost} width="300px" />
+                
               </TableItem>
             </TableRow>
           </Table>
         </Slide>
-        <Slide bgImage={images.bg1} bgDarken="0.7" transition={["zoom"]} bgColor="cyan" textColor="white">
-          <Heading size={2} textColor="white">For Contractors</Heading>
+        <Slide bgImage={images.bgQuote} transition={["zoom"]} bgColor="cyan" textColor="white">
           <Table>
             <TableRow>
               <TableItem>
+                <Heading size={4} textAlign="left" textColor="white">For Contractors</Heading>
                 <List>
                   <Appear><ListItem>Search</ListItem></Appear>
                   <Appear><ListItem>Review</ListItem></Appear>
@@ -113,31 +152,31 @@ export default class Presentation extends React.Component {
                 </List>
               </TableItem>
               <TableItem>
-                <Image src={images.handiFind} width="300px" />
               </TableItem>
             </TableRow>
           </Table>
         </Slide>
-         <Slide transition={["fade","zoom"]} bgColor="cyan">          
-          <Heading size={1} textColor="secondary">Screenshot of app & liz's talk</Heading>
+         <Slide bgImage={images.laptopgirl} transition={["fade","zoom"]} bgColor="cyan">          
+          <Heading size={1} textColor="secondary"></Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <Table>
             <TableRow>
               <TableItem>
-                <Heading size={5}>Made With</Heading>                
-                <Image src={images.reactLogo} width="180px"/>
-                <Image src={images.mongoDbLogo} width="250px" />                
+                <Heading size={4}>The Team</Heading>
+                <Image src={images.team} width="500px" /> 
               </TableItem>
-              <TableItem>
-                <Heading size={5}>The Team</Heading>
-                <Image src={images.team} width="350px" /> 
+              </TableRow>
+              <TableRow>
+              <TableItem>            
+                <Image src={images.logostrip} width="500px"/>              
               </TableItem>
             </TableRow>
           </Table>
         </Slide>
-        <Slide bgImage={images.iphone} bgDarken="0.7" transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Text>Thank you with logo and link to https://handiapp.herokuapp.com</Text>
+        <Slide transition={["fade"]} bgColor="cyan">
+          <Image src={images.ThankYou} width="1000px"/>  
+          <Text textColor="white" textAlign="center">See the app @ https://handiapp.herokuapp.com</Text>
         </Slide>
       </Deck>
     );
