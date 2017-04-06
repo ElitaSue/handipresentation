@@ -15,7 +15,8 @@ import {
   Text,
   Table,
   TableRow,
-  TableItem
+  TableItem,
+  Appear
 } from "spectacle";
 
 // Import image preloader util
@@ -63,21 +64,24 @@ export default class Presentation extends React.Component {
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide bgImage={images.jump} bgDarken="0.6" transition={["zoom"]} bgColor="primary">
           <Image src={images.logo} width="500px" />
-          <Text margin="10px 0 0" textColor="cyan" size={1} fit bold>
+          <Text margin="10px 0 0" textColor="primary" size={1} fit bold>
             Choose from hundreds of contractors, handymen and laborers
           </Text>
         </Slide>
         <Slide transition={["fade","zoom"]} bgColor="cyan">          
+          <Heading size={1} textColor="secondary">Tree Pic and Sue's description</Heading>
+        </Slide>
+        <Slide transition={["fade","zoom"]} bgColor="cyan">          
           <Heading size={1} textColor="secondary">What is handi?</Heading>
-          <Text size={6} textColor="primary">Handi app helps you connect quickly with available contractors, laborers and handyman in you area and get the best deal for your budget.</Text>
+          <Text size={6} textColor="primary">Handi app helps you connect quickly with available contractors, laborers and handymen in your area and get the best deal for your budget.</Text>
         </Slide>
         <Slide transition={["spin"]} bgColor="primary" textColor="tertiary">
           <Heading size={3} textColor="secondary" caps>What can you do?</Heading>
           <List>
-            <ListItem textColor="cyan">Create your Account</ListItem>
-            <ListItem textColor="cyan">Share a job you need done</ListItem>
-            <ListItem textColor="cyan">Place a bid on a job you want to do</ListItem>
-            <ListItem textColor="cyan">Hire someone for the job</ListItem>
+            <Appear><ListItem textColor="cyan">Create your Account</ListItem></Appear>
+            <Appear><ListItem textColor="cyan">Share a job you need done</ListItem></Appear>
+            <Appear><ListItem textColor="cyan">Place a bid on a job you want to do</ListItem></Appear>
+            <Appear><ListItem textColor="cyan">Hire someone for the job</ListItem></Appear>
           </List>
         </Slide>
         <Slide bgImage={images.tools1} bgDarken="0.7" transition={["spin"]} bgColor="cyan" textColor="white">
@@ -86,9 +90,9 @@ export default class Presentation extends React.Component {
             <TableRow>
               <TableItem>
                 <List>
-                  <ListItem>Post your job, the description, the time-frame and your budget.</ListItem>
-                  <ListItem>Contractors, laborers and handyman interested in your project quote you on your job.</ListItem>
-                  <ListItem>Select from multiple offers to find the specific quote and worker that is the best fit for your project.</ListItem>
+                  <Appear><ListItem>Post</ListItem></Appear>
+                  <Appear><ListItem>Review</ListItem></Appear>
+                  <Appear><ListItem>Hire</ListItem></Appear>
                 </List>
               </TableItem>
               <TableItem>
@@ -103,9 +107,9 @@ export default class Presentation extends React.Component {
             <TableRow>
               <TableItem>
                 <List>
-                  <ListItem>Find customers who need work in your area of specialty.</ListItem>
-                  <ListItem>Review their project and budget.</ListItem>
-                  <ListItem>Quote your price or rate for doing their job, along with the time frame it may take to do the job and add a description.</ListItem>
+                  <Appear><ListItem>Search</ListItem></Appear>
+                  <Appear><ListItem>Review</ListItem></Appear>
+                  <Appear><ListItem>Quote</ListItem></Appear>
                 </List>
               </TableItem>
               <TableItem>
@@ -113,6 +117,9 @@ export default class Presentation extends React.Component {
               </TableItem>
             </TableRow>
           </Table>
+        </Slide>
+         <Slide transition={["fade","zoom"]} bgColor="cyan">          
+          <Heading size={1} textColor="secondary">Screenshot of app & liz's talk</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <Table>
@@ -130,11 +137,7 @@ export default class Presentation extends React.Component {
           </Table>
         </Slide>
         <Slide bgImage={images.iphone} bgDarken="0.7" transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Successful people are not gifted; they just work hard, then succeed on purpose.</Quote>
-            <Cite textColor="cyan">Unknown</Cite>
-            <Image src={images.logo} width="250px" />
-          </BlockQuote>
+          <Text>Thank you with logo and link to https://handiapp.herokuapp.com</Text>
         </Slide>
       </Deck>
     );
