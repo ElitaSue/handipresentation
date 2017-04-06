@@ -40,6 +40,7 @@ const images = {
   tools1: require("../assets/tools1.png"),
   jump: require("../assets/jump.jpg"),
   iphone: require("../assets/iphone.jpg"),
+  team: require("../assets/team.jpg"),
 };
 
 preloader(images);
@@ -122,8 +123,8 @@ export default class Presentation extends React.Component {
                 <Image src={images.mongoDbLogo} width="250px" />                
               </TableItem>
               <TableItem>
-                <Heading size={5}>The Team</Heading>                                
-                <Text>The Team</Text>
+                <Heading size={5}>The Team</Heading>
+                <Image src={images.team} width="350px" /> 
               </TableItem>
             </TableRow>
           </Table>
